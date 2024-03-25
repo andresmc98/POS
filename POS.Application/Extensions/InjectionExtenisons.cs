@@ -1,4 +1,4 @@
-﻿using FluentValidation.AspNetCore;
+﻿using FluentValidation;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using POS.Application.Interfaces;
@@ -13,10 +13,11 @@ namespace POS.Application.Extensions
         {
             services.AddSingleton(configuration);
 
-            services.AddFluentValidation(options =>
-            {
-                options.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies().Where(p => p!.IsDynamic));
-            });
+            //services.AddFluentValidation(options =>
+            //{
+            //    options.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies().Where(p => p!.IsDynamic));
+            //});
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
