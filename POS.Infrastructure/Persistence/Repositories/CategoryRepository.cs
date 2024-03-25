@@ -17,7 +17,7 @@ namespace POS.Infrastructure.Persistence.Repositories
             _context = context; 
         }
 
-        public async Task<BaseEntityResponse<Category>> ListCategories(BaseFilterRequest filters)
+        public async Task<BaseEntityResponse<Category>> ListCategories(BaseFiltersRequest filters)
         {
             var response = new BaseEntityResponse<Category>();
 

@@ -8,7 +8,7 @@ namespace POS.Application.Interfaces
 {
     public interface ICategoryApplication
     {
-        Task<BaseResponse<BaseEntityResponse<CategoryResponseDto>>> ListCategories(BaseFilterRequest filters);
+        Task<BaseResponse<BaseEntityResponse<CategoryResponseDto>>> ListCategories(BaseFiltersRequest filters);
         Task<BaseResponse<IEnumerable<CategorySelectResponseDto>>> ListSelectCategories();
         Task<BaseResponse<CategoryResponseDto>> CategoryByID(int categoryId);
         Task<BaseResponse<bool>> RegisterCategory(CategoryRequestDto requestDto);

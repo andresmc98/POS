@@ -1,6 +1,6 @@
 ﻿namespace POS.Infrastructure.Commons.Bases.Request
 {
-    public class BaseFilterRequest : BasePaginationRequest
+    public class BaseFiltersRequest : BasePaginationRequest
     {
         public int? NumFilter { get; set; } = null;
         public string? TextFilter { get; set; } = null;

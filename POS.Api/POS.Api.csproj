@@ -15,13 +15,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\POS.Application\POS.Application.csproj" />
     <ProjectReference Include="..\POS.Infrastructure\POS.Infrastructure.csproj" />
     <ProjectReference Include="..\POS.Utilities\POS.Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\NewFolder\" />
   </ItemGroup>
 
 </Project>

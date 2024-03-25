@@ -4,7 +4,7 @@
     {
         //Declaracion o matricula de nuestras interfaces a nivel de repository
 
-        ICategoryRepository Category {  get; }
+        ICategoryRepository Category { get; }
 
         void SaveChanges();
 

@@ -24,7 +24,7 @@ namespace POS.Application.Services
             _mapper = mapper;
             _validationRules = validationRules;
         }
-        public async Task<BaseResponse<BaseEntityResponse<CategoryResponseDto>>> ListCategories(BaseFilterRequest filters)
+        public async Task<BaseResponse<BaseEntityResponse<CategoryResponseDto>>> ListCategories(BaseFiltersRequest filters)
         {
             var response = new BaseResponse<BaseEntityResponse<CategoryResponseDto>>();
             var categories = await _unitOfWork.Category.ListCategories(filters);

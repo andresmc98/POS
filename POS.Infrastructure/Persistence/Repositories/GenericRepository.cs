@@ -11,7 +11,7 @@ namespace POS.Infrastructure.Persistence.Repositories
         {
             IQueryable<TDTO> queryDto = request.Order == "desc" ? queryable.OrderBy($"{request.Sort} descending") : queryable.OrderBy($"{request.Sort} ascending");
 
-            if (pagination) queryDto.Paginate(request);
+            if (pagination) queryDto = queryDto.Paginate(request);
 
             return queryDto;
         }
