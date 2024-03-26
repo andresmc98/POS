@@ -4,6 +4,9 @@ using POS.Infrastructure.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 var Configuration = builder.Configuration;
 // Add services to the container.
+var Cors = "Cors";
+
+
 builder.Services.AddInjectionInfraestructure(Configuration);
 builder.Services.AddInjectionApplication(Configuration);
 
@@ -12,7 +15,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: Cors,
+        builder =>
+        {
+            builder.WithOrigins("*");
+            builder.AllowAnyMethod();
+            builder.AllowAnyHeader();
+        });
+});
+
 var app = builder.Build();
+
+app.UseCors(Cors);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
